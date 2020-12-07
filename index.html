@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="stylegrid.css">
+    <title>WhiteBoard Application</title>
+</head>
+
+<body>
+    <div class="tools">
+        <div class="toolbox">
+            <div class="tool active-tool" id="pencil">
+                <img src="./resources-master/resources-master/NewIcons/Black_Pencil.svg" alt="">
+                <div class="tools-options hide" id="pencil-options">
+                    <input type="range" name="" id="pencilSize" value="4" min="1" max="40">
+                    <div class="pencil-colors">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="blue"></div>
+                        <div class="black"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool" id="eraser">
+                <img src="./resources-master/resources-master/NewIcons/Eraser.svg" alt="">
+                <div class="tools-options hide" id="eraser-options">
+                    <input type="range" name="" id="eraserSize" value="30" min="1" max="70">
+                    <button class="erase-all">Clear Canvas</button>
+                </div>
+            </div>
+            <div class="tool" id="sticky">
+                <img src="./resources-master/resources-master/NewIcons/StickyNote.svg" alt="">
+            </div>
+            <div class="tool">
+                <img src="./resources-master/resources-master/NewIcons/Photo.svg" alt="">
+            </div>
+            <div class="tool">
+                <img src="./resources-master/resources-master/NewIcons/Download.svg" alt="">
+            </div>
+            <div class="tool" id="undo">
+                <img src="./resources-master/resources-master/NewIcons/Undo.svg" alt="">
+            </div>
+            <div class="tool" id="redo">
+                <img src="./resources-master/resources-master/NewIcons/Redo.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="bg-color-div">
+        <div class="bg bg-pink"></div>
+        <div class="bg bg-white"></div>
+        <div class="bg bg-grey"></div>
+        <div class="bg bg-skyblue"></div>
+    </div>
+    <div class="popupDiv">
+        <div class="popup">
+            <button class="popup-btn gridBtn">
+                <input type="checkbox" id="gridInput">
+            </button>
+            <button class="popup-btn bgColorBtn">
+                <input type="checkbox" id="bgColorInput">
+            </button>
+        </div>
+    </div>
+   
+    <button class="cornerBtn"></button>
+
+
+</body>
+<script src="./main.js"></script>
+<script src="./script.js"></script>
+<script src="./tools.js"></script>
+<script src="./sticky.js"></script>
+<script src="./bgColor.js"></script>
+<script src="./grid.js"></script>
+</html>

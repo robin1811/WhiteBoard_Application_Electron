@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  /* cursor: url(crosshair.cur, default); */
+  /* cursor: url(Crosshair\ Black.cur), pointer; */
+  /* cursor: crosshair; */
+}
+
+body,
+html {
+  margin: 0px;
+  cursor: crosshair;
+ /* cursor: url(./resources-master/cursor/Crosshair\ black.cur), pointer; */
+ /* background : url("./resources-master/gridimg.png") repeat; */
+}
+
+.tools {
+  /* background: rgb(51, 93, 129); */
+  background-color: plum;
+  height: 100px;
+}
+
+.content {
+  /* background: brown; */
+  height: calc(100vh - 100px);
+  /* background: url("resources-master/resources-master/Pixel_grid_4000x2000\ \(1\).svg"); */
+  /* background-size: repe; */
+}
+
+#canvas {
+  /* height: 100%;
+    width: 100%; */
+}
+.toolbox {
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tool {
+  height: 50px;
+  position: relative;
+}
+.tool img:hover{
+  animation: bounce 1s linear;
+}
+@keyframes bounce{
+  20%,50%,80%,to{
+    transform:translateY(0);
+  }
+  40%{
+    transform:translateY(-20px);
+  }
+  70%{
+    transform:translateY(-12px);
+  }
+  90%{
+    transform:translateY(-4px);
+  }
+}
+
+.tool img {
+  height: 50px;
+}
+
+.tools-options {
+  height: 100px;
+  width: 160px;
+  background-color: lightgray;
+  position: absolute;
+  border-radius: 10px;
+  top: 65px;
+  left: -60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.pencil-colors {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.pencil-colors div {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+}
+
+.red {
+  background: red;
+}
+.yellow {
+  background: yellow;
+}
+.blue {
+  background: blue;
+}
+.black {
+  background: black;
+}
+
+.hide {
+    display: none;
+}
+
+.active-tool {
+    background: lightgray;
+    height: 60px;
+    padding: 7px;
+    border-radius: 25px;
+}
+
+.sticky {
+  position: absolute;
+  top: 14%;
+  left: 86%;
+  border: 1px solid lightgray;
+}
+.sticky-header {
+    background: aliceblue;
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+  }
+  .minimize {
+    height: 22px;
+    background: lightgreen;
+    width: 22px;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  .close {
+    height: 22px;
+    background: lightcoral;
+    width: 22px;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  .stickybox {
+    outline: none;
+    border: none;
+  }
+
+  .erase-all {
+    background-color: grey;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-family: -webkit-pictograph;
+    font-size: large;
+  }
