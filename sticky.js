@@ -52,6 +52,40 @@ stickyAdd.addEventListener("click", function(){
             }
         }
     
+
+        let initialX;
+        let initialY;
+        let isStickHold = false;
+        
+        stickyHeader.addEventListener("mousedown",function(e){
+            isStickHold = true;
+            initialX = e.x;
+            initialY = e.y;
+        })
+
+        stickyHeader.addEventListener("mousemove",function(e){
+            if(isStickHold){
+                let finalX = e.x;
+                let finalY = e.y;
+                let dy = finalY - initialY;
+                let dx = finalX - initialX;
+
+                let{top , left} = sticky.getBoundingClientRect();
+
+                sticky.style.top = top + dy + "px";
+                sticky.style.left = left + dx + "px";
+
+                initialX = finalX;
+                initialY = finalY;
+            }
+        })
+
+        stickyHeader.addEventListener("mouseup",function(e){
+            isStickHold  = false;
+        })
+        
+
+
         minimize.addEventListener("click" , function(){
             textBox.style.display = textBox.style.display == "none" ? "block" : "none";
         })

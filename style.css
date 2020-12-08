@@ -8,9 +8,10 @@
 body,
 html {
   margin: 0px;
-  cursor: crosshair;
+  /* cursor: crosshair; */
  /* cursor: url(./resources-master/cursor/Crosshair\ black.cur), pointer; */
  /* background : url("./resources-master/gridimg.png") repeat; */
+ /* cursor : url('./resources-master/cursor/imposter.cur'), auto; */
 }
 
 .tools {
@@ -22,6 +23,7 @@ html {
 .content {
   /* background: brown; */
   height: calc(100vh - 100px);
+  cursor : url('./resources-master/cursor/Crosshair black.cur'), auto;
   /* background: url("resources-master/resources-master/Pixel_grid_4000x2000\ \(1\).svg"); */
   /* background-size: repe; */
 }
@@ -40,6 +42,7 @@ html {
 .tool {
   height: 50px;
   position: relative;
+  /* cursor : pointer; */
 }
 .tool img:hover{
   animation: bounce 1s linear;
@@ -153,3 +156,11 @@ html {
     font-family: -webkit-pictograph;
     font-size: large;
   }
+
+  .photo {
+    /* width : 400px; */
+    /* height: 400px; */
+    object-fit: contain;
+  }
+
+

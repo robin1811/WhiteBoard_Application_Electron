@@ -75,8 +75,9 @@ for(let i=0; i<penColors.length; i++){
 // let activeTool = "pencil";
 
 pencil.addEventListener("click" , function(){
-    myCursor.style.cursor = "url('./resources-master/cursor/Crosshair black.cur), auto";
     if( !pencil.classList.contains("active-tool")){
+        myCursor.style.cursor = "url('./resources-master/cursor/Crosshair black.cur'), auto";
+        // myCursor.style.cursor = "url('./resources-master/cursor/Crosshair black.cur), auto";
         eraser.classList.remove("active-tool");
         eraserOptions.classList.add("hide");
         pencil.classList.add("active-tool");
