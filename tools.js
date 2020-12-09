@@ -16,6 +16,8 @@ let myCursor = document.querySelector(".content");
 
 let clearAll = document.querySelector(".erase-all");
 
+let myTools = document.querySelector(".tools"); 
+
 
 clearAll.addEventListener("click", function(){
    
@@ -150,7 +152,7 @@ undo.addEventListener("click",function(){
     }
 });
 
-let myBackgroundColor = "white";
+let myBackgroundColor = "#ffffff";
 redo.addEventListener("click",function(){
     eraserOptions.classList.add("hide");
     pencilOptions.classList.add("hide")
@@ -269,6 +271,9 @@ document.querySelector(".bg-pink").addEventListener("click",function(){
     if(gridBtn.checked == true){
         drawGrid(800,400,"canvas");
     }
+    myTools.style.backgroundColor = "ivory";
+    socket.emit("bgColor",myEraserColor);
+
 });
 document.querySelector(".bg-white").addEventListener("click",function(){
     document.querySelector(".content").style.backgroundColor ="#ffffff";
@@ -282,6 +287,8 @@ document.querySelector(".bg-white").addEventListener("click",function(){
     if(gridBtn.checked == true){
         drawGrid(800,400,"canvas");
     }
+    myTools.style.backgroundColor = "lavender";
+    socket.emit("bgColor",myEraserColor);
 });
 document.querySelector(".bg-grey").addEventListener("click",function(){
     document.querySelector(".content").style.backgroundColor ="#d3d3d3";
@@ -295,6 +302,8 @@ document.querySelector(".bg-grey").addEventListener("click",function(){
     if(gridBtn.checked == true){
         drawGrid(800,400,"canvas");
     }
+    myTools.style.backgroundColor = "mistyrose";
+    socket.emit("bgColor",myEraserColor);
 });
 document.querySelector(".bg-skyblue").addEventListener("click",function(){
     document.querySelector(".content").style.backgroundColor="#87ceeb";
@@ -308,4 +317,8 @@ document.querySelector(".bg-skyblue").addEventListener("click",function(){
     if(gridBtn.checked == true){
         drawGrid(800,400,"canvas");
     }
+    myTools.style.backgroundColor = "antiquewhite";
+    socket.emit("bgColor",myBackgroundColor);
 });
+
+// socket.emit("bgColor",myBackgroundColor);

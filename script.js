@@ -30,6 +30,9 @@ let isPenDown = false;
 
 canvas.addEventListener("mousedown",function(e){
     // console.log(e);
+
+    // socket.emit("mousedown", "I am drawing !!!");
+
     if(redoPoints.length){
         redoPoints = [];
     }
@@ -73,6 +76,7 @@ canvas.addEventListener("mousedown",function(e){
         // console.log("inside md else");
     }
         line.push(point);
+        socket.emit("mousedown", point);
     // 106:
 })
 
@@ -109,6 +113,7 @@ canvas.addEventListener("mousemove", function(e){
                 }
             }
             line.push(point);
+            socket.emit("mousemove", point);
         // 106:
     }
 })

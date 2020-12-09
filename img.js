@@ -90,7 +90,7 @@ imageUpload.addEventListener("change", function(){
                         console.log(myPhoto.style.height);
                     }
                     else{
-                        myPhoto.style.height = "400px";
+                        myPhoto.style.height = "4 00px";
                     }
                   return false;
                 }

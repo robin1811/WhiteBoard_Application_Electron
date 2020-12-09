@@ -1,7 +1,7 @@
 {
   "name": "WhiteBoard_Application_Electron",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# WhiteBoard_Application_Electron\"",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^10.1.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robin1811/WhiteBoard_Application_Electron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robin1811/WhiteBoard_Application_Electron/issues"
+  },
+  "homepage": "https://github.com/robin1811/WhiteBoard_Application_Electron#readme"
 }

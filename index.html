@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="stylegrid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <title>WhiteBoard Application</title>
 </head>
 
 <body>
     <div class="tools">
-        <div class="toolbox">
+        <div class="tool-button">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+        <div class="toolbox add-animation">
             <div class="tool active-tool" id="pencil">
                 <img src="./resources-master/resources-master/NewIcons/Black_Pencil.svg" alt="">
                 <div class="tools-options hide" id="pencil-options">
@@ -36,7 +43,7 @@
             </div>
             <div class="tool" id="upload">
                 <img src="./resources-master/resources-master/NewIcons/Photo.svg" alt="">
-                <input type="file" name="" id="photo-upload" style = "display : none">
+                <input type="file" name="" id="photo-upload" style="display : none">
             </div>
             <div class="tool" id="download">
                 <img src="./resources-master/resources-master/NewIcons/Download.svg" alt="">
@@ -47,6 +54,9 @@
             <div class="tool" id="redo">
                 <img src="./resources-master/resources-master/NewIcons/Redo.svg" alt="">
             </div>
+            <!-- <div class="tool" id="my-shape-btn">
+                <img src="./resources-master/resources-master/NewIcons/Redo.svg" alt="">
+            </div> -->
         </div>
     </div>
 
@@ -70,13 +80,27 @@
             </button>
         </div>
     </div>
-   
+
     <button class="cornerBtn"></button>
-  
+
 
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+
+<script>
+    const socket = io.connect("http://localhost:3000");
+
+
+
+    // socket.emit("testing","hey there i am just testing the socket !!!");
+    // socket.on("testing-again",function(data){
+    //     console.log("At client side",data);
+    // })
+
+</script>
+
 <script src="./main.js"></script>
 <script src="./script.js"></script>
 <script src="./tools.js"></script>
@@ -84,5 +108,8 @@
 <script src="./bgColor.js"></script>
 <script src="./grid.js"></script>
 <script src="./img.js"></script>
+<script src = "./animation.js"></script>
+<script src="./socket.js"></script>
+
 
 </html>
