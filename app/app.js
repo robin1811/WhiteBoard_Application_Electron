@@ -16,9 +16,26 @@ io.on("connection", function(socket){
     socket.on("mousemove", function(data){
         socket.broadcast.emit("mm",data);
     })
+    socket.on("mouseup",function(data){
+        socket.broadcast.emit("mu",data);
+    })
     socket.on("bgColor",function(data){
         socket.broadcast.emit("myBackgroundColor", data);
     })
+    socket.on("addGrid",function(data){
+        if(data == true){
+            socket.broadcast.emit("Grid", "add grid");
+        }
+        else{
+            socket.broadcast.emit("Grid","remove grid");
+        }
+    })
+    socket.on("socketUndo",function(data){
+        socket.broadcast.emit("mySocketUndo", data);
+    })
+    // socket.on("socketRedo",function(data){
+    //     socket.broadcast.emit("mySocketRedo", data);
+    // })
 
 }) 
 
