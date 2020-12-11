@@ -81,7 +81,6 @@ function selectedPencilMD(e){
 };
 
 function selectedPencilMM(e){
-     // console.log(e);
      if(isPenDown){
         let x = e.x;
         let y = e.y-topOffSet;
@@ -124,7 +123,6 @@ canvas.addEventListener("mousedown",function(e){
         rectmousedown = true;
         lmousex = e.x;
         lmousey = e.y-topOffSet;
-        // ctx.lineWidth = 2; 
 
     }
     else if(circlebtn.classList.contains("active-tool")){
@@ -147,7 +145,6 @@ canvas.addEventListener("mousedown",function(e){
         
     }
 })
-
 
 
 canvas.addEventListener("mousemove", function(e){
@@ -260,6 +257,10 @@ canvas.addEventListener("mouseup",function(e){
             // lineWidth : 2
         }
         line.push(point);
+        socket.emit("rectangle",point);
+        if(gridBtn.checked == true){
+            drawGrid(800,400,"canvas");
+        }
     }
     else if(circlebtn.classList.contains("active-tool")){
         let point = {
@@ -273,6 +274,7 @@ canvas.addEventListener("mouseup",function(e){
             // lineWidth : 2
         }
         line.push(point);
+        socket.emit("circle",point);
     }
     else if(trianglebtn.classList.contains("active-tool")){
         let point = {
@@ -285,6 +287,7 @@ canvas.addEventListener("mouseup",function(e){
             // lineWidth : 2
         }
         line.push(point);
+        socket.emit("triangle",point);
     }
     else if(linebtn.classList.contains("active-tool")){
         let point = {
@@ -297,15 +300,18 @@ canvas.addEventListener("mouseup",function(e){
             // lineWidth : 2
         }
         line.push(point);
+        socket.emit("line",point);
+    }
+    if(gridBtn.checked == true){
+        drawGrid(800,400,"canvas");
     }
     isPenDown = false;
     rectmousedown = false;
     PointsDb.push(line);
     socket.emit("mouseup", "mouse is up");
     line = [];
+    drawPoints();   
     console.log(PointsDb);
-    // rectbtn.classList.remove("active-tool");
-    // pencil.classList.add('active-tool');
 })
 // 102:
 

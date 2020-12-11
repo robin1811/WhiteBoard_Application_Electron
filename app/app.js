@@ -30,12 +30,24 @@ io.on("connection", function(socket){
             socket.broadcast.emit("Grid","remove grid");
         }
     })
+
+    socket.on("rectangle", function(data){
+        socket.broadcast.emit("myrectangle",data);
+    })
+    socket.on("triangle", function(data){
+        socket.broadcast.emit("mytriangle",data);
+    })
+    socket.on("circle", function(data){
+        socket.broadcast.emit("mycircle",data);
+    })
+    socket.on("line", function(data){
+        socket.broadcast.emit("myline",data);
+    })
+
+
     socket.on("socketUndo",function(data){
         socket.broadcast.emit("mySocketUndo", data);
     })
-    // socket.on("socketRedo",function(data){
-    //     socket.broadcast.emit("mySocketRedo", data);
-    // })
 
 }) 
 
